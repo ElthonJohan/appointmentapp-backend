@@ -17,14 +17,14 @@ public class MedicDTO {
 
     @NotNull
     @Size(min = 3)
-    private String primaryName;
+    private String firstName;
 
     @Size(min = 3)
-    private String surname;
+    private String lastName;
 
     @NotNull
     @Size(min = 3, max = 12)
-    private String cmpMedic;
+    private String cmp;
 
     @NotNull
     private String photo;

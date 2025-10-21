@@ -19,14 +19,14 @@ public class MapperConfig {
 
         //Escritura
         modelMapper.createTypeMap(MedicDTO.class, Medic.class)
-                .addMapping(MedicDTO::getPrimaryName, (dest, v) -> dest.setFirstName((String) v))
-                .addMapping(MedicDTO::getSurname, (dest, v) -> dest.setLastName((String) v))
+                .addMapping(MedicDTO::getFirstName, (dest, v) -> dest.setFirstName((String) v))
+                .addMapping(MedicDTO::getLastName, (dest, v) -> dest.setLastName((String) v))
                 .addMapping(MedicDTO::getPhoto, (dest, v) -> dest.setPhotoUrl((String) v));
 
         //Lectura
         modelMapper.createTypeMap(Medic.class, MedicDTO.class)
-                .addMapping(Medic::getFirstName, (dest, v) -> dest.setPrimaryName((String) v))
-                .addMapping(Medic::getLastName, (dest, v) -> dest.setSurname((String) v));
+                .addMapping(Medic::getFirstName, (dest, v) -> dest.setFirstName((String) v))
+                .addMapping(Medic::getLastName, (dest, v) -> dest.setLastName((String) v));
 
         return modelMapper;
     }
